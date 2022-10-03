@@ -4,7 +4,7 @@ import kotlin.math.pow
 
 fun main(args: Array<String>) {
 
-    theGreatest()
+    distanceBetweenTwoPoints()
 
 }
 
@@ -144,23 +144,40 @@ fun area() {
 
 }
 
-fun theGreatest(){
+fun theGreatest() {
     val reader = Scanner(System.`in`)
 
     val firstValue = reader.nextInt()
     val secondValue = reader.nextInt()
     val thirdValue = reader.nextInt()
 
-
-
-    var maior = (firstValue + secondValue + Math.abs(firstValue - secondValue))/2;
-    maior = (maior + thirdValue + Math.abs(maior - thirdValue))/2
-
+    var maior = (firstValue + secondValue + Math.abs(firstValue - secondValue)) / 2;
+    maior = (maior + thirdValue + Math.abs(maior - thirdValue)) / 2
 
     print("$maior eh o maior")
     println()
 }
 
-fun consumption(){
+fun consumption() {
+    val reader = Scanner(System.`in`)
 
+    val distance = reader.nextInt()
+    val spentFuel = reader.nextDouble()
+
+    val  averageConsumption  = distance / spentFuel
+
+    println("${String.format("%.3f", averageConsumption)} km/l")
+}
+
+fun distanceBetweenTwoPoints(){
+    val reader = Scanner(System.`in`)
+
+    val x1 = reader.nextDouble()
+    val y1 = reader.nextDouble()
+    val x2 = reader.nextDouble()
+    val y2 = reader.nextDouble()
+
+    val distance =  Math.sqrt((x2 - x1).pow(2) + (y2- y1).pow(2))
+    print("${String.format("%.4f", distance)}")
+    println()
 }
