@@ -2,7 +2,34 @@ fun main(){
     println("oi mundo")
 
     //generics()
-    packageKotlin()
+    // packageKotlin()
+   // maps()
+    mutableVsReadOnly()
+}
+
+fun noSideEffectList(names: List<String>) {
+    println(names)
+}
+
+fun sideEffectList(names: MutableList<String>) {
+    names.add("Joker")
+}
+
+fun mutableVsReadOnly() {
+    val people = mutableListOf("Brian", "Stanley", "Ringo")
+    noSideEffectList(people) // [Brian, Stanley, Ringo]
+    sideEffectList(people)   // Adds a Joker to the list
+    noSideEffectList(people) // [Brian, Stanley, Ringo, Joker]
+}
+
+
+fun maps() {
+    val scores = mutableMapOf("Eric" to 9, "Mark" to 12, "Wayne" to 1)
+
+    //new entry
+
+    scores["Aritana"] = 3
+    println(scores)
 }
 
 fun packageKotlin() {
